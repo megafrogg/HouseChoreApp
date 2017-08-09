@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="style.css">
+  <title>House Chore List</title>
+</head>
+
+<body>
+    <div class="container">
+
+      <div class="user" id="Amanda">
+        <h2>Amanda</h2>
+        <ul class="chores" id="amanda-chores">
+          <li>Sweep some shit</li>
+        </ul>
+        <input type="text" class="textbox" name="chore" placeholder="Chore..." id="amanda-chore-text" required>
+        <input type="button" id="amanda-chore-button" value="Add Chore">
+        <input type="button" id="amanda-chore-clear" value="Clear Done">
+      </div>
+
+      <div class="user" id="Rob">
+        <h2>Rob</h2>
+        <ul class="chores" id="rob-chores">
+        </ul>
+        <form class="add-chore">
+          <input type="text" class="textbox" name="chore" placeholder="Chore..." required>
+          <input type="button" class="btn" value="Add Chore">
+          <input type="button" id="amanda-chore-clear" value="Clear Done">
+        </form>
+      </div>
+
+      <div class="user" id="Shannon">
+        <h2>Shannon</h2>
+        <ul class="chores" id="shannon-chores">
+        </ul>
+        <form class="add-chore">
+          <input type="text" class="textbox" name="chore" placeholder="Chore..." required>
+          <input type="button" class="btn" value="Add Chore">
+          <input type="button" id="amanda-chore-clear" value="Clear Done">
+        </form>
+      </div>
+
+      <div class="user" id="Mitchell">
+        <h2>Mitchell</h2>
+        <ul class="chores" id="mitchell-chores">
+        </ul>
+        <form class="add-chore">
+          <input type="text" class="textbox" name="chore" placeholder="Chore..." required>
+          <input type="button" class="btn" value="Add Chore">
+          <input type="button" id="amanda-chore-clear" value="Clear Done">
+        </form>
+      </div>
+
+    </div>
+
+    <script>
+      const addChores = document.getElementById("amanda-chore-button");
+      const choresList = document.getElementById("amanda-chores");
+      const choreText = document.getElementById("amanda-chore-text");
+      const clearDone = document.getElementById("amanda-chore-clear");
+
+      function addChore(e) {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(choreText.value));
+        choresList.appendChild(li);
+        choreText.value = "";
+      }
+
+      function clearDoneChores(e) {
+        choresList.innerHTML = "";
+      }
+
+      console.log(addChores);
+      addChores.addEventListener('click', addChore);
+      clearDone.addEventListener('click', clearDoneChores);
+    </script>
+
+</body>
+
+</html>
